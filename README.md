@@ -1,7 +1,7 @@
 # diffEcosys_Acclimation
 
 ![framework](Framework/diffEcosys_framework.jpg) 
-Differentiable Ecosystem Model (δ<sub>psn</sub>) Framework. The δpsn framework integrates a neural network (NN)
+**Description**: Differentiable Ecosystem Model (δ<sub>psn</sub>) Framework. The δpsn framework integrates a neural network (NN)
 component with a differentiable process‐based model in this case the photosynthesis module from FATES (The Functionally Assembled Terrestial Ecosystem Simulator). The NN
 component includes three networks—NN<sub>B,i</sub>, NN<sub>V</sub>, and NN<sub>⍺</sub>—each trained on different sets of predictors, such as soil
 attributes, plant functional type (PFT), leaf nitrogen content (LNC), and environmental conditions. These networks learn
@@ -10,6 +10,8 @@ attributes (θ<sub>c</sub>). The photosynthesis module then simulates A<sub>N</s
 outputs, including V<sub>c,max25</sub> (maximum carboxylation rate at 25°C, a key parameter representing plant photosynthetic
 capacity), are compared against multivariate observations to compute a loss function, which guides the backpropagation
 process to update the NN parameters.
+
+**Citation**: Please cite this paper if the code is helpful to you.
 
 Aboelyazeed, D., Xu, C., Gu, L., Luo, X.,
 Liu, J., Lawson, K., & Shen, C. (2025).
