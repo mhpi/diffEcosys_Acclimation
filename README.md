@@ -7,7 +7,7 @@ component includes three networks—NNB,i, NNV, and NN⍺—each trained on diff
 attributes, plant functional type (PFT), leaf nitrogen content (LNC), and environmental conditions. These networks learn
 distinct parameters that feed into the photosynthesis module along with meteorological forcings (F) and constant terrain
 attributes (θc). The photosynthesis module then simulates AN (net photosynthesis) and gS (stomatal conductance). The
-outputs, including Vc,max25 (maximum carboxylation rate at 25°C, a key parameter representing plant photosynthetic
+outputs, including V<sub>c,max25</sub> (maximum carboxylation rate at 25°C, a key parameter representing plant photosynthetic
 capacity), are compared against multivariate observations to compute a loss function, which guides the backpropagation
 process to update the NN parameters.
 
@@ -19,4 +19,3 @@ physics‐informed machine learning of
 photosynthesis. Journal of Geophysical
 Research: Biogeosciences, 130,
 e2024JG008552. https://doi.org/10.1029/
-2024JG008552
