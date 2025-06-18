@@ -20,4 +20,4 @@ model generalizability with differentiable
 physics‐informed machine learning of
 photosynthesis. Journal of Geophysical
 Research: Biogeosciences, 130,
-e2024JG008552. https://doi.org/10.1029/
+e2024JG008552. https://doi.org/10.1029/2024JG008552
