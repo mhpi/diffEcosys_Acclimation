@@ -1,0 +1,25 @@
+{
+  "params_minmax": {
+    "Vcmax25" : [20   , 150],
+    "g0"      : [8000 , 48000],
+    "g1"      : [0.5  , 10],
+    "vcmaxha" : [40000, 100000]
+  },
+  "NN_INconfig_dict": {
+    "PFT"         : [[], false],
+    "PFT+LNC"     : [["LNC"], true],
+    "PFT+LNC+ENV" : [["Tair_30d" , "Rad_30d" , "VPD_30d", "CO2_30d", "day_len_30d", "LNC"], true],
+    "PFT+ENV"     : [["Tair_30d" , "Rad_30d" , "VPD_30d", "CO2_30d", "day_len_30d"], true]
+
+  },
+  "param_exp_dict": {
+    "vbonly": [1, "V+B"       , ["Vcmax25"]],
+    "g1"    : [2, "V+B+g1"    , ["Vcmax25", "g1"]],
+    "g0"    : [2, "V+B+g0"    , ["Vcmax25", "g0"]],
+    "Ha"    : [2, "V+B+Ha"    , ["Vcmax25", "vcmaxha"]],
+    "g0g1"  : [3, "V+B+g"     , ["Vcmax25", "g0", "g1"]],
+    "g1Ha"  : [3, "V+B+g1+Ha" , ["Vcmax25", "g1", "vcmaxha"]],
+    "g0Ha"  : [3, "V+B+g0+Ha" , ["Vcmax25", "g0", "vcmaxha"]],
+    "g0g1Ha": [4, "V+B+g+Ha"  , ["Vcmax25", "g0", "g1", "vcmaxha"]]
+  }
+}

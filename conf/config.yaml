@@ -1,0 +1,69 @@
+
+## experiment handler
+NNconfig_name : PFT                                                                             # Input configurations : inputs used to the neural networks --> check master_exp.json
+param_exp     : g0g1Ha                                                                          # parameterization experiment name (reflect parameters to be learnt) --> check master_exp.json
+run_case      : multi                                                                           # run case: default is multi (i.e. all target variables are used in the loss function)
+spatial_flag  : ""                                                                              # global if [3] in action (see below)
+Action        : 0
+                                                                                                # 0 All     : train on all available data,
+                                                                                                # 1 spatial : train and test the model spatially,
+                                                                                                # 2 temporal: train and test the model temporally,
+                                                                                                # 3 global  : test the model globally (must have pretrained models)
+
+## physical models
+nly : 5                                                                                         # number of soil layers
+
+## Hyperparameters:
+device      : 0                                                                                 # cpu or cuda device
+dp          : 0.4                                                                               # dropout ratio in neural networks employed
+lr          : 0.008                                                                             # learning rate for the optimizer
+def_seed    : 42                                                                                # default random seed
+epochs_all  : 500                                                                               # number of epochs
+epochs_spatial : 200                                                                            # number of epochs for spatial experiments (less value since running the model more than once)
+solver      : 0                                                                                 # solver default option
+time_ratio  : 0.8                                                                               # temporal train-test split ratio
+seed_lst    : [906691060, 413654000, 813847340, 955892129, 451585302, 43469774, 278009743,      # seed list to reproduce the results
+               548977049, 521760890, 434794719]
+
+
+## NN_V arguments
+Vmodel_name : Network_relu_sig                                                                  # NNV neural network model name
+
+## NN_B arguments
+Bmodel_name : TabularModel_sig                                                                  # NNB neural network model name
+
+## NNalpha arguments
+alphamodel_name: Network_relu                                                                   # NN alpha neural network model name
+
+## experimental design
+use_vcmax25   : True
+cat_cols      : ['PFT']                                                                         # Categorical columns: PFT > Plnat Functional Type
+target_cols   : ['Photo', 'Cond', 'Vcmax25']                                                    # or ['Photo','Cond'] if global
+target_cols_w : [1.0, 1.0, 1.0]                                                                 # weights for different target variables
+var_cols      : ['Photo', 'Cond']                                                               # physical model simulated variables
+
+## directories or data path
+LGE_path            : ./datasets/LGE_data.csv                                                   # data path for leaf gas exchange data (LGE)
+vcmax25_path        : ./datasets/Vcmax25_data.csv                                               # data path for vcmax25 dataset
+Global_data_path    : ./datasets/Global/                                                        # data path for global dataset
+output_path         : ./results/LGE+Vcmax25/                                                    # output data path (LGE+Vcmax25 or global)
+pft_global_path     : ./datasets/Global/PFT_global_distribution.nc                              # data path for PFT global dataset (only needed for global run)
+trained_models_path : ./results/LGE+Vcmax25/                                                    # output data path (LGE+Vcmax25) with pretrained NN models
+
+
+## Global data attributes
+lat_range : 721                                                                                 # range of latitudes globally (0.25 deg grid)
+lon_range : 1440                                                                                # range of longitudes globally (0.25 deg grid)
+lat_start : 90.0                                                                                # First latitude
+lat_end   : -90.0                                                                               # Last latitude
+lon_start : -180.0                                                                              # First longitude
+lon_end   : 179.8                                                                               # Last longitude
+target_year_st : 2011                                                                           # start simulation year
+target_year_ed : 2020                                                                           # end simulation year
+global_forward:
+  seasons  : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+              'Aug', 'Sep', 'Oct', 'Nov', 'Dec']                                                # monthly or growing season ['DJF' for northern hemisphere, 'JJA' for southern hemisphere]
+  yr_Range :  [2011, 2020]
+
+
+

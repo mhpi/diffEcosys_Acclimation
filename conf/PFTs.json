@@ -1,0 +1,34 @@
+{
+  "pft_lst": [
+    "Crop R",
+    "NET Boreal",
+    "BET Tropical",
+    "NET Temperate",
+    "BET Temperate",
+    "BDT Temperate",
+    "C3 grass",
+    "BDS Temperate",
+    "C4 grass",
+    "BDT Tropical"
+  ],
+
+  "pft_glob_lst": [
+    "desert,ice, ocean",
+    "NET Temperate",
+    "NET Boreal",
+    "NDT Boreal",
+    "BET Tropical",
+    "BET Temperate",
+    "BDT Tropical",
+    "BDT Temperate",
+    "BDT Boreal",
+    "BES Temperate",
+    "BDS Temperate",
+    "BDS Boreal",
+    "C3 arctic",
+    "C3 grass",
+    "C4 grass",
+    "Crop R",
+    "Crop I"
+  ]
+}
